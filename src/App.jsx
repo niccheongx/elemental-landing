@@ -177,31 +177,17 @@ export default function ElementalLanding() {
             <div className="hero-orb" />
             <Fade delay={.1}>
               <Phone>
-                <div className="app-preview">
-                  <div className="app-date">Monday, 17 Feb</div>
-                  <div className="app-headline" style={{fontSize:11,padding:'8px 6px',marginTop:4}}>Today's landscape</div>
-                  <div className="app-insight">Good energy for honest conversations. Not the day to force outcomes or push for a raise. If you have a difficult call to make, the window is before noon.</div>
-                  <div className="app-divider" />
-                  <div className="app-section-label">Your protocols today</div>
-                  <div className="app-actions">
-                    <div className="app-action">{"\uD83E\uDD0D"} Wear white or silver</div>
-                    <div className="app-action">{"\uD83E\uDDED"} Face west in meetings</div>
-                    <div className="app-action">{"\u23F0"} Important calls before noon</div>
-                  </div>
-                  <div className="app-divider" />
-                  <div className="app-section-label">Life areas</div>
-                  <div className="app-areas-mini">
-                    {[{n:"Career",v:"Hold steady"},{n:"Relationships",v:"Lean in"},{n:"Health",v:"Balanced"},{n:"Timing",v:"Wait for Wednesday"}].map(a => (
-                      <div key={a.n} className="app-area-mini"><span className="aam-name">{a.n}</span><span className="aam-val">{a.v}</span></div>
-                    ))}
-                  </div>
-                  <div className="app-divider" />
-                  <div className="app-section-label">Week ahead</div>
-                  <div className="app-insight" style={{fontSize:7.5,background:'rgba(139,92,246,.06)',borderColor:'rgba(139,92,246,.1)'}}>Your strongest day this week is Wednesday. Schedule anything important then. Friday has friction \u2014 keep it light.</div>
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}
+                  src="/hero-demo.webm"
+                />
               </Phone>
             </Fade>
-            <Fade delay={.3}><p className="phone-caption">This reading is unique to one person's chart. Yours will be different.</p></Fade>
+            <Fade delay={.3}><p className="phone-caption">Real app footage. Your reading will be unique to your chart.</p></Fade>
           </div>
         </div>
         {/* Trust bar */}
@@ -412,7 +398,7 @@ export default function ElementalLanding() {
               </Fade>
             ))}
           </div>
-          <Fade delay={.25}><p className="pricing-extra">Need unlimited access? <strong>Inner Circle</strong> at S$38/mo \u2014 unlimited Ask Shifu, monthly personalized PDF report, priority everything. <a href="#" style={{color:'var(--bl)',textDecoration:'none',borderBottom:'1px solid var(--bl)'}}>Learn more</a></p></Fade>
+          <Fade delay={.25}><p className="pricing-extra">Need unlimited access? <strong>Inner Circle</strong> at S$38/mo {"\u2014"} unlimited Ask Shifu, monthly personalized PDF report, priority everything. <a href="#" style={{color:'var(--bl)',textDecoration:'none',borderBottom:'1px solid var(--bl)'}}>Learn more</a></p></Fade>
         </div>
       </section>
 
@@ -468,11 +454,11 @@ body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;overf
 
 .scroll-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--bl),var(--pu));z-index:1000;transition:width .15s}
 
-.nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:999;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);background:rgba(15,23,42,.65);border:1px solid rgba(148,163,184,.08);border-radius:100px;box-shadow:0 4px 24px rgba(0,0,0,.2)}
-.nav-in{padding:10px 28px;display:flex;align-items:center;gap:28px}
-.nav-logo{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--tx);letter-spacing:-.01em}
-.nav-r{display:flex;align-items:center;gap:20px}
-.nav-r a{color:rgba(226,232,240,.7);font-size:12.5px;text-decoration:none;transition:color .2s}.nav-r a:hover{color:var(--tx)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);background:rgba(11,17,32,.7);border-bottom:1px solid rgba(148,163,184,.06)}
+.nav-in{max-width:var(--mw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--tx);letter-spacing:-.01em}
+.nav-r{display:flex;align-items:center;gap:22px}
+.nav-r a{color:rgba(226,232,240,.65);font-size:13px;text-decoration:none;transition:color .2s}.nav-r a:hover{color:var(--tx)}
 
 .btn-p{display:inline-flex;align-items:center;gap:7px;padding:13px 28px;border-radius:50px;background:linear-gradient(135deg,var(--bl),${C.blueMuted});color:${C.bgDeep};font-weight:600;font-size:14px;border:none;cursor:pointer;transition:box-shadow .3s,transform .2s;font-family:'DM Sans',sans-serif;position:relative}
 .btn-p:hover{box-shadow:0 0 28px rgba(34,211,238,.25);transform:translateY(-1px)}
@@ -530,7 +516,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 .sec-h2{font-family:'Fraunces',serif;font-size:clamp(26px,3.5vw,40px);font-weight:500;text-align:center;line-height:1.2;margin-bottom:40px}
 
 /* S2: Decision Stream */
-.agitate{padding:80px 0;position:relative;overflow:hidden}
+.agitate{padding:48px 0;position:relative;overflow:hidden}
 .stream-viewport{position:relative;height:420px;overflow:hidden;margin:32px 0 40px}
 .stream-fade-top,.stream-fade-bot{position:absolute;left:0;right:0;height:100px;z-index:2;pointer-events:none}
 .stream-fade-top{top:0;background:linear-gradient(to bottom,${C.bgDeep},transparent)}
@@ -552,7 +538,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 .ag-bridge-sub{font-size:14px;color:var(--sub);line-height:1.65;max-width:520px;margin:0 auto 22px}
 
 /* S3: Transform — Toggle + Features */
-.transform-sec{padding:80px 0;position:relative}
+.transform-sec{padding:48px 0;position:relative}
 .toggle-wrap{margin-bottom:48px}
 .toggle-bar{display:flex;gap:4px;background:rgba(148,163,184,.04);border:1px solid ${C.border};border-radius:12px;padding:4px;width:fit-content;margin:0 auto 24px}
 .toggle-btn{display:flex;align-items:center;gap:8px;padding:10px 22px;border:none;background:none;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--dim);cursor:pointer;transition:all .3s}
@@ -576,7 +562,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 .feat-fade-r{position:absolute;top:0;right:0;width:80px;height:100%;background:linear-gradient(to right,transparent,${C.bgDeep});pointer-events:none;border-radius:0 14px 14px 0}
 
 /* Stories — Animated marquee */
-.stories{padding:80px 0;overflow:hidden}
+.stories{padding:48px 0;overflow:hidden}
 .marquee-wrap{display:flex;flex-direction:column;gap:14px;overflow:hidden;padding:0 0}
 @keyframes marqueeLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes marqueeRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
@@ -590,7 +576,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 .story-who{font-size:11px;color:var(--dim)}
 
 /* Pricing */
-.pricing-sec{padding:80px 0}
+.pricing-sec{padding:48px 0}
 .pricing-anchor{font-size:15px;color:rgba(226,232,240,.8);margin-bottom:28px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.65}
 .annual-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:36px;font-size:13px;color:var(--dim)}
 .at-active{color:var(--tx);font-weight:600}
@@ -612,7 +598,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 .pricing-extra{font-size:13px;color:var(--dim);line-height:1.6;max-width:540px;margin:0 auto}
 
 /* FAQ */
-.faq-sec{padding:60px 0 40px}
+.faq-sec{padding:40px 0 32px}
 .faq-list{display:flex;flex-direction:column;gap:6px}
 .faq{border:1px solid ${C.border};border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color .3s;background:${C.card}}.faq:hover{border-color:${C.borderHover}}
 .faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:14px;font-weight:500}
@@ -623,7 +609,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 .faq-ai{padding:0 20px 16px;font-size:13px;color:rgba(226,232,240,.78);line-height:1.7}
 
 /* CTA Final */
-.cta-final{padding:100px 24px;position:relative;overflow:hidden}
+.cta-final{padding:64px 24px;position:relative;overflow:hidden}
 .cta-orb{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.1),rgba(34,211,238,.05),transparent 70%);filter:blur(80px);top:50%;left:50%;transform:translate(-50%,-50%);z-index:1}
 .gradient-text{background:linear-gradient(135deg,var(--bl),var(--pu),var(--go));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .cta-h{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,44px);font-weight:500;line-height:1.2;margin-bottom:16px}
