@@ -75,7 +75,7 @@ function Phone({ children }) {
     <div className="phone-float">
       <div className="phone-mockup">
         {children}
-        <div className="phone-reflection" />
+        <div className="phone-island" />
       </div>
     </div>
   );
@@ -190,7 +190,7 @@ export default function ElementalLanding() {
                   loop
                   muted
                   playsInline
-                  style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}
+                  style={{width:'100%',height:'100%',objectFit:'contain',display:'block',background:'#000'}}
                   src="/hero-demo.webm"
                 />
               </Phone>
@@ -501,7 +501,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 .h1-accent{background:linear-gradient(135deg,var(--bl),var(--pu));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{color:rgba(226,232,240,.82);font-size:15.5px;line-height:1.7;margin:22px 0 28px;max-width:520px}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.hero-visual{position:relative;display:flex;flex-direction:column;align-items:center;min-width:0;overflow:visible}
+.hero-visual{position:relative;display:flex;flex-direction:column;align-items:center;min-width:0;overflow:visible;margin-right:32px}
 .hero-orb{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.1) 0%,rgba(139,92,246,.08) 40%,transparent 70%);filter:blur(80px);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0}
 .phone-caption{font-size:12px;color:var(--dim);text-align:center;margin-top:14px;font-style:italic}
 
@@ -512,8 +512,8 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 /* Phone — premium floating mockup */
 .phone-float{position:relative;z-index:2;animation:phoneFloat 6s ease-in-out infinite}
 @keyframes phoneFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.phone-mockup{position:relative;width:280px;max-height:580px;aspect-ratio:9/19.5;border-radius:40px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 80px rgba(0,150,255,.15),0 40px 100px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.05)}
-.phone-reflection{position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(to top,${C.bgDeep},transparent);pointer-events:none;z-index:2}
+.phone-mockup{position:relative;max-height:600px;aspect-ratio:9/19.5;width:auto;border-radius:44px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 80px rgba(0,150,255,.12),0 0 0 1px rgba(255,255,255,.04);background:#000}
+.phone-island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:90px;height:24px;border-radius:12px;background:rgba(0,0,0,.6);z-index:3;pointer-events:none}
 .app-preview{padding:12px 10px;height:100%;display:flex;flex-direction:column;gap:6px;background:linear-gradient(180deg,${C.bgDeep},${C.bg})}
 .app-date{font-size:8px;color:var(--dim);font-family:'JetBrains Mono',monospace;text-align:center}
 .app-top{text-align:center;padding:4px 0}
@@ -650,7 +650,8 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
   .tc-grid{grid-template-columns:1fr}
   .feat-card{width:200px}
   .pricing-grid{grid-template-columns:1fr;max-width:380px}
-  .phone-mockup{width:240px;max-height:500px}
+  .phone-mockup{max-height:480px}
+  .hero-visual{margin-right:0}
   .hero{padding:100px 24px 60px}
   .nav-r a{display:none}
   .trust-bar{flex-direction:column;gap:4px}
