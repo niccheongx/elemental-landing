@@ -29,10 +29,6 @@ export default function CosmicParallaxBg({ className = '' }) {
       <div className="cosmic-stars" style={{ boxShadow: smallStars }} />
       <div className="cosmic-stars-medium" style={{ boxShadow: mediumStars }} />
       <div className="cosmic-stars-large" style={{ boxShadow: bigStars }} />
-      <div className="cosmic-horizon">
-        <div className="cosmic-glow" />
-      </div>
-      <div className="cosmic-earth" />
     </div>
   );
 }

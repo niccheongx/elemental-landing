@@ -457,23 +457,18 @@ body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;overf
 .noise{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.025;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* Cosmic Parallax Background */
-.cosmic-parallax-container{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 50% 0%,#0d1b3e 0%,#070d1f 50%,#000 100%)}
+.cosmic-parallax-container{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 
 @keyframes animStar{from{transform:translateY(0)}to{transform:translateY(-2000px)}}
 
 .cosmic-stars{width:1px;height:1px;background:transparent;animation:animStar 50s linear infinite}
 .cosmic-stars::after{content:'';position:absolute;top:2000px;width:1px;height:1px;background:transparent;box-shadow:inherit}
 
-.cosmic-stars-medium{width:2px;height:2px;background:transparent;animation:animStar 100s linear infinite}
+.cosmic-stars-medium{width:2px;height:2px;background:transparent;animation:animStar 100s linear infinite;filter:drop-shadow(0 0 3px #fff)}
 .cosmic-stars-medium::after{content:'';position:absolute;top:2000px;width:2px;height:2px;background:transparent;box-shadow:inherit}
 
-.cosmic-stars-large{width:3px;height:3px;background:transparent;animation:animStar 150s linear infinite}
+.cosmic-stars-large{width:3px;height:3px;background:transparent;animation:animStar 150s linear infinite;filter:drop-shadow(0 0 6px #fff)}
 .cosmic-stars-large::after{content:'';position:absolute;top:2000px;width:3px;height:3px;background:transparent;box-shadow:inherit}
-
-.cosmic-horizon{position:absolute;bottom:12%;left:-10%;right:-10%;height:2px;background:rgba(80,160,255,.4);box-shadow:0 0 20px 4px rgba(80,160,255,.25),0 0 60px 10px rgba(60,140,255,.15),0 0 120px 30px rgba(40,120,255,.08);z-index:1}
-.cosmic-glow{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:120%;height:200px;background:radial-gradient(ellipse at 50% 100%,rgba(60,140,255,.12) 0%,rgba(40,100,200,.06) 30%,transparent 70%);pointer-events:none}
-
-.cosmic-earth{position:absolute;bottom:-60%;left:-25%;width:150%;height:80%;border-radius:50%;background:radial-gradient(ellipse at 50% 0%,#0a1628 0%,#050a14 30%,#000 60%);z-index:2;box-shadow:0 -4px 30px rgba(60,140,255,.06)}
 
 @keyframes charScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .char-wall{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
@@ -498,7 +493,7 @@ body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;overf
 .btn-outline{background:transparent;color:var(--bl);border:1.5px solid rgba(34,211,238,.3)}.btn-outline:hover{background:rgba(34,211,238,.08)}
 
 /* HERO */
-.hero{position:relative;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 80px;overflow:hidden;min-height:100vh}
+.hero{position:relative;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;overflow:hidden;min-height:100vh}
 .hero-inner{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;width:100%;position:relative;z-index:10}
 .hero-copy{position:relative;z-index:2}
 .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bl);margin-bottom:18px}
@@ -506,7 +501,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 .h1-accent{background:linear-gradient(135deg,var(--bl),var(--pu));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{color:rgba(226,232,240,.82);font-size:15.5px;line-height:1.7;margin:22px 0 28px;max-width:520px}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.hero-visual{position:relative;display:flex;flex-direction:column;align-items:center;min-width:0;padding-right:48px}
+.hero-visual{position:relative;display:flex;flex-direction:column;align-items:center;min-width:0;overflow:visible}
 .hero-orb{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.1) 0%,rgba(139,92,246,.08) 40%,transparent 70%);filter:blur(80px);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0}
 .phone-caption{font-size:12px;color:var(--dim);text-align:center;margin-top:14px;font-style:italic}
 
@@ -656,7 +651,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
   .feat-card{width:200px}
   .pricing-grid{grid-template-columns:1fr;max-width:380px}
   .phone-mockup{width:240px;max-height:500px}
-  .hero-visual{padding-right:0}
+  .hero{padding:100px 24px 60px}
   .nav-r a{display:none}
   .trust-bar{flex-direction:column;gap:4px}
   .trust-dot{display:none}
