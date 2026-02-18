@@ -188,7 +188,7 @@ export default function ElementalLanding() {
                   loop
                   muted
                   playsInline
-                  style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}
+                  style={{width:'100%',height:'100%',objectFit:'contain',display:'block',background:'#000'}}
                   src="/hero-demo.webm"
                 />
               </Phone>
@@ -478,14 +478,14 @@ body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;overf
 
 /* HERO */
 .hero{position:relative;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 32px;overflow:hidden}
-.hero-inner{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
+.hero-inner{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;width:100%}
 .hero-copy{position:relative;z-index:2}
 .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bl);margin-bottom:18px}
 h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.15;font-weight:500;color:var(--tx);letter-spacing:-.01em}
 .h1-accent{background:linear-gradient(135deg,var(--bl),var(--pu));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{color:rgba(226,232,240,.82);font-size:15.5px;line-height:1.7;margin:22px 0 28px;max-width:520px}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.hero-visual{position:relative;display:flex;flex-direction:column;align-items:center}
+.hero-visual{position:relative;display:flex;flex-direction:column;align-items:center;overflow:visible;min-width:0}
 .hero-orb{position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.12) 0%,rgba(34,211,238,.06) 50%,transparent 70%);filter:blur(60px);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0}
 .phone-caption{font-size:12px;color:var(--dim);text-align:center;margin-top:14px;font-style:italic}
 
@@ -496,8 +496,8 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 /* Phone */
 .phone-float{position:relative;z-index:2;animation:phoneFloat 6s ease-in-out infinite}
 @keyframes phoneFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.device{width:280px;padding:6px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border-radius:36px;box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.06),0 0 60px rgba(139,92,246,.08)}
-.device-screen{border-radius:30px;overflow:hidden;aspect-ratio:9/19.5;background:#000}
+.device{width:300px;max-width:100%;padding:6px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border-radius:36px;box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.06),0 0 60px rgba(139,92,246,.08)}
+.device-screen{border-radius:30px;overflow:hidden;aspect-ratio:9/16;background:#000}
 .app-preview{padding:12px 10px;height:100%;display:flex;flex-direction:column;gap:6px;background:linear-gradient(180deg,${C.bgDeep},${C.bg})}
 .app-date{font-size:8px;color:var(--dim);font-family:'JetBrains Mono',monospace;text-align:center}
 .app-top{text-align:center;padding:4px 0}
@@ -634,7 +634,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
   .tc-grid{grid-template-columns:1fr}
   .feat-card{width:200px}
   .pricing-grid{grid-template-columns:1fr;max-width:380px}
-  .device{width:240px}
+  .device{width:260px}
   .nav-r a{display:none}
   .trust-bar{flex-direction:column;gap:4px}
   .trust-dot{display:none}
