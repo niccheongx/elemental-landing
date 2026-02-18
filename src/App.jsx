@@ -70,7 +70,13 @@ function CharWall({ bright }) {
   return <div className="char-wall">{rows.map((r, i) => <div key={i} className="char-row" style={{ fontSize: r.sz, color: `rgba(148,163,184,${r.op})`, animationDuration: `${r.spd}s`, animationDirection: r.dir }}>{CHARS.repeat(4)}</div>)}</div>;
 }
 function Phone({ children }) {
-  return <div className="phone-float"><div className="phone-frame"><div className="phone-notch" /><div className="phone-screen">{children}</div><div className="phone-home" /></div></div>;
+  return (
+    <div className="phone-float">
+      <div className="device">
+        <div className="device-screen">{children}</div>
+      </div>
+    </div>
+  );
 }
 function FAQ({ q, a, defaultOpen }) {
   const [open, setOpen] = useState(defaultOpen || false);
@@ -490,10 +496,8 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
 /* Phone */
 .phone-float{position:relative;z-index:2;animation:phoneFloat 6s ease-in-out infinite}
 @keyframes phoneFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.phone-frame{width:260px;background:#1E293B;border-radius:36px;border:2px solid rgba(148,163,184,.1);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35),0 0 30px ${C.purpleGlow}}
-.phone-notch{height:26px;display:flex;align-items:center;justify-content:center;background:${C.bgDeep}}.phone-notch::after{content:'';width:80px;height:6px;border-radius:10px;background:rgba(148,163,184,.08)}
-.phone-screen{aspect-ratio:9/19;background:${C.bgDeep};overflow:hidden}
-.phone-home{height:18px;display:flex;align-items:center;justify-content:center;background:${C.bgDeep}}.phone-home::after{content:'';width:36%;height:3.5px;border-radius:2px;background:rgba(148,163,184,.12)}
+.device{width:280px;padding:6px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border-radius:36px;box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.06),0 0 60px rgba(139,92,246,.08)}
+.device-screen{border-radius:30px;overflow:hidden;aspect-ratio:9/19.5;background:#000}
 .app-preview{padding:12px 10px;height:100%;display:flex;flex-direction:column;gap:6px;background:linear-gradient(180deg,${C.bgDeep},${C.bg})}
 .app-date{font-size:8px;color:var(--dim);font-family:'JetBrains Mono',monospace;text-align:center}
 .app-top{text-align:center;padding:4px 0}
@@ -630,7 +634,7 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
   .tc-grid{grid-template-columns:1fr}
   .feat-card{width:200px}
   .pricing-grid{grid-template-columns:1fr;max-width:380px}
-  .phone-frame{width:220px}
+  .device{width:240px}
   .nav-r a{display:none}
   .trust-bar{flex-direction:column;gap:4px}
   .trust-dot{display:none}
