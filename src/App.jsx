@@ -659,6 +659,18 @@ h1{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);line-height:1.1
   .story-card{min-width:280px;max-width:300px}
   .marquee-left{animation-duration:35s}
   .marquee-right{animation-duration:35s}
+
+  /* Decisions stream — mobile single-column stack */
+  .stream-viewport{height:400px;margin:24px 0 32px}
+  .stream-cols{flex-direction:column;gap:0;padding:0 16px}
+  .stream-col{width:100%}
+  .stream-col:nth-child(2){display:none}
+  .stream-card{padding:16px;gap:14px}
+  .stream-cat{font-size:11px;width:80px}
+  .stream-q{font-size:14px;line-height:1.5}
+  .ag-bridge{padding:32px 20px}
+  .ag-bridge-h{font-size:20px}
+  .ag-bridge-sub{font-size:13px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 `;
