@@ -118,8 +118,6 @@ export default function ElementalLanding() {
   const [ctaText, scramble] = useScramble("Show Me My Chart \u2014 Free");
   const [ctaText2, scramble2] = useScramble("See my chart");
 
-<<<<<<< HEAD
-=======
   // Set favicon + page title
   useEffect(() => {
     document.title = "Elemental \u2014 Daily guidance from your Chinese birth chart";
@@ -128,7 +126,6 @@ export default function ElementalLanding() {
     link.type = 'image/png'; link.href = '/favicon-32x32.png';
   }, []);
 
->>>>>>> a35c558
   // Stories — behavior-change framing only, grounded in real persona usage patterns
   // Testimonials — Joanna Wiebe structure: before → realization → after, each kills one objection
   const storiesTop = [
@@ -181,10 +178,6 @@ export default function ElementalLanding() {
   return (
     <>
       <style>{STYLES}</style>
-<<<<<<< HEAD
-      <CosmicParallaxBG />
-=======
->>>>>>> a35c558
       <div className="noise" />
       <ScrollBar />
 
@@ -584,11 +577,7 @@ const STYLES = `
 body{background:var(--bg);color:var(--tx);font-family:'DM Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55}
 
 /* Cosmic Parallax Background */
-<<<<<<< HEAD
-.cosmic-parallax-container{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-=======
 .cosmic-parallax-container{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
->>>>>>> a35c558
 
 @keyframes animStar{from{transform:translateY(0)}to{transform:translateY(-2000px)}}
 
